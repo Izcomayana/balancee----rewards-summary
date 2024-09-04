@@ -1,26 +1,32 @@
 import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import balancee from "../../../../public/balancee-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="lg:hidden bg-gray-400">
-      <div>
-        <button
-          className="p-2 bg-blue-500 text-black"
+    <div className="lg:hidden">
+      <div className="p-4">
+        <div className="flex justify-between items-center">
+          <div>
+            <img src={balancee} alt="balancee-logo" />
+          </div>
+          
+          <button
+          className="text-black"
           onClick={() => setIsOpen(!isOpen)}
         >
-          Toggle Menu
+          <GiHamburgerMenu />
         </button>
+        </div>
 
-        {/* Overlay */}
         <div
           className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${
             isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
           onClick={() => setIsOpen(false)}
         ></div>
-
-        {/* Off-Canvas Menu */}
         <div
           className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ${
             isOpen ? "translate-x-0" : "-translate-x-full"
