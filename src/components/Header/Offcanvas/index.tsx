@@ -1,5 +1,5 @@
 import { useState } from "react";
-import balancee from "../../../../public/balancee-logo.png";
+import balancee from "/balancee-logo.png";
 import { Link } from "react-router-dom";
 
 const Offcanvas = () => {
