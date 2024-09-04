@@ -70,7 +70,7 @@ const Offcanvas = () => {
                 <Link to="/">Home</Link>
               </li>
               <li className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]" onClick={() => setIsOpen(false)}>
-                <Link to="/bookings">Bookings</Link>
+                <Link to="/history">History</Link>
               </li>
               <li className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]" onClick={() => setIsOpen(false)}>
                 Cash Out
