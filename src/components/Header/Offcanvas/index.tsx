@@ -9,8 +9,8 @@ const Offcanvas = () => {
     <div className="lg:hidden">
       <div className="p-4">
         <div className="flex justify-between items-center">
-          <div>
-            <img src={balancee} alt="balancee-logo" />
+          <div className="w-28">
+            <img src={balancee} alt="balancee-logo" className="w-full" />
           </div>
 
           <button className="text-black" onClick={() => setIsOpen(!isOpen)}>
@@ -44,8 +44,8 @@ const Offcanvas = () => {
         >
           <div className="p-8">
             <div className="flex justify-between items-center">
-              <div>
-                <img src={balancee} alt="balancee-logo" className="w-28" />
+              <div className="w-28">
+                <img src={balancee} alt="balancee-logo" className="w-full" />
               </div>
 
               <button className="text-black" onClick={() => setIsOpen(false)}>
@@ -65,14 +65,14 @@ const Offcanvas = () => {
                 </svg>
               </button>
             </div>
-            <ul className="mt-24 flex flex-col gap-4">
-              <li className="p-4 mb-2 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]">
+            <ul className="mt-24 flex flex-col gap-2">
+              <li className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]" onClick={() => setIsOpen(false)}>
                 <Link to="/">Home</Link>
               </li>
-              <li className="p-4 mb-2 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]">
+              <li className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]" onClick={() => setIsOpen(false)}>
                 <Link to="/bookings">Bookings</Link>
               </li>
-              <li className="p-4 mb-2 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]">
+              <li className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]" onClick={() => setIsOpen(false)}>
                 Cash Out
               </li>
             </ul>

@@ -11,7 +11,7 @@ const Navbar = () => {
           </div>
 
           <nav>
-            <ul className="flex justify-between items-center gap-20">
+            <ul className="flex justify-between items-center gap-10">
               <li className="nav-li text-xl font-medium text-gray-500 transition-all hover:text-[#0870A7] hover:border-b-2 focus:text-[#0870A7] focus:border-b-2 active:text-[#0870A7] active:border-b-2">
                 <Link to="/"> Home</Link>
               </li>
