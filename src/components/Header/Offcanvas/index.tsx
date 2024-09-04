@@ -66,13 +66,22 @@ const Offcanvas = () => {
               </button>
             </div>
             <ul className="mt-24 flex flex-col gap-2">
-              <li className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]" onClick={() => setIsOpen(false)}>
+              <li
+                className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]"
+                onClick={() => setIsOpen(false)}
+              >
                 <Link to="/">Home</Link>
               </li>
-              <li className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]" onClick={() => setIsOpen(false)}>
+              <li
+                className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]"
+                onClick={() => setIsOpen(false)}
+              >
                 <Link to="/history">History</Link>
               </li>
-              <li className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]" onClick={() => setIsOpen(false)}>
+              <li
+                className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]"
+                onClick={() => setIsOpen(false)}
+              >
                 Cash Out
               </li>
             </ul>
