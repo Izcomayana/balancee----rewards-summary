@@ -1,11 +1,15 @@
-import Navbar from './Navbar'
+import Navbar from "./Navbar";
+import Offcanvas from "./Offcanvas";
 
 const Header = () => {
   return (
-    <>
-      <Navbar />
-    </>
-  )
-}
+    <header>
+      <div className="my-4">
+        <Navbar />
+        <Offcanvas />
+      </div>
+    </header>
+  );
+};
 
-export default Header
+export default Header;
