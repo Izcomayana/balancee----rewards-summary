@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { CashoutOptions } from "@/components/cashoutOptions";
+import CashoutOptions from "./components/CashoutOptions";
 import { Card } from "@/components/ui/card";
 import AOS from "aos";
 import "aos/dist/aos.css";
