@@ -2,11 +2,18 @@
 import { useEffect, useState } from "react";
 import { Wallet, Tag, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardFooter, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import DirectCashout from "../DirectCashout";
 import PromoCode from "../Promocode.tsx";
-import { Toaster } from 'sonner';
+import { Toaster } from "sonner";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -18,10 +25,14 @@ export default function CashoutOptions() {
     AOS.init();
     AOS.refresh();
   }, []);
-  
+
   return (
     <>
-      <Card className="w-full max-w-3xl mx-auto"  data-aos="fade-up" data-aos-duration="2000">
+      <Card
+        className="w-full max-w-3xl mx-auto"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">
             Choose Your Cash-Out Method
@@ -74,11 +85,7 @@ export default function CashoutOptions() {
               >
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Options
               </Button>
-              {selectedOption === "direct" ? (
-                <DirectCashout />
-              ) : (
-                <PromoCode />
-              )}
+              {selectedOption === "direct" ? <DirectCashout /> : <PromoCode />}
             </div>
           )}
         </CardContent>

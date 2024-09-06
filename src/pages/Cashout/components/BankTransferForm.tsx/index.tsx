@@ -55,7 +55,9 @@ const BankTransferForm = () => {
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="amount">Cashout Amount (₦{min.toLocaleString()} - ₦{max.toLocaleString()})</Label>
+        <Label htmlFor="amount">
+          Cashout Amount (₦{min.toLocaleString()} - ₦{max.toLocaleString()})
+        </Label>
         <Input
           id="amount"
           type="text"
@@ -64,7 +66,11 @@ const BankTransferForm = () => {
           placeholder={`Enter amount to cashout (₦${min.toLocaleString()} - ₦${max.toLocaleString()})`}
         />
       </div>
-      <Button className="w-full" onClick={handleSubmit} disabled={!isFormValid || isSubmitting}>
+      <Button
+        className="w-full"
+        onClick={handleSubmit}
+        disabled={!isFormValid || isSubmitting}
+      >
         {isSubmitting ? (
           <>
             <Loader className="mr-2 h-4 w-4 animate-spin" /> Processing...
@@ -75,21 +81,21 @@ const BankTransferForm = () => {
       </Button>
 
       <AlertDialog open={showBankAlert} onOpenChange={setShowBankAlert}>
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>Bank Transfer Successful</AlertDialogTitle>
-              <AlertDialogDescription>
-                Your cashout request has been processed successfully. The funds
-                should appear in your account within 3-5 business days.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogAction onClick={() => setShowBankAlert(false)}>
-                OK
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Bank Transfer Successful</AlertDialogTitle>
+            <AlertDialogDescription>
+              Your cashout request has been processed successfully. The funds
+              should appear in your account within 3-5 business days.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction onClick={() => setShowBankAlert(false)}>
+              OK
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };

@@ -9,7 +9,10 @@ const DirectCashout = () => {
 
   return (
     <div className="space-y-4">
-      <RadioGroup defaultValue="bank" onValueChange={(value) => setCashoutMethod(value)}>
+      <RadioGroup
+        defaultValue="bank"
+        onValueChange={(value) => setCashoutMethod(value)}
+      >
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="bank" id="bank" />
           <Label htmlFor="bank">Bank Transfer</Label>

@@ -19,22 +19,27 @@ const Balance = () => {
   return (
     <>
       <Dialog>
-        <div data-aos="fade-down"
-     data-aos-easing="linear"
-     data-aos-duration="1000">
-              <div className="p-6 bg-white rounded-lg shadow-md w-full overflow-hidden hover:shadow-lg transition-shadow md:w-[35rem]">
-          <div className="flex justify-between items-center">
-            <p className="font-medium text-xl">Balance</p>
-            <DialogTrigger asChild>
-              <p className="underline border-none cursor-pointer">how to use</p>
-            </DialogTrigger>
-          </div>
-
-          <p className="mt-10 text-2xl text-gray-800 font-bold">₦21, 200</p>
-          <span className="text-xs text-gray-700">+27.5% from last month</span>
-        </div>
+        <div
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          <div className="p-6 bg-white rounded-lg shadow-md w-full overflow-hidden hover:shadow-lg transition-shadow md:w-[35rem]">
+            <div className="flex justify-between items-center">
+              <p className="font-medium text-xl">Balance</p>
+              <DialogTrigger asChild>
+                <p className="underline border-none cursor-pointer">
+                  how to use
+                </p>
+              </DialogTrigger>
             </div>
-        
+
+            <p className="mt-10 text-2xl text-gray-800 font-bold">₦21, 200</p>
+            <span className="text-xs text-gray-700">
+              +27.5% from last month
+            </span>
+          </div>
+        </div>
 
         <DialogContent className="sm:max-w-lg">
           <DialogHeader>

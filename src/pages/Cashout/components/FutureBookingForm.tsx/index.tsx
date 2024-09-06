@@ -16,8 +16,10 @@ import {
 const FutureBookingForm = () => {
   const [bookingId, setBookingId] = useState<string>("");
   const [discountAmount, setDiscountAmount] = useState<string>("");
-  const [isDiscountFormValid, setIsDiscountFormValid] = useState<boolean>(false);
-  const [isBookingSubmitting, setIsBookingSubmitting] = useState<boolean>(false);
+  const [isDiscountFormValid, setIsDiscountFormValid] =
+    useState<boolean>(false);
+  const [isBookingSubmitting, setIsBookingSubmitting] =
+    useState<boolean>(false);
   const [showDiscountAlert, setShowDiscountAlert] = useState<boolean>(false);
   const max = 21200;
   const min = 100;
@@ -54,7 +56,9 @@ const FutureBookingForm = () => {
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="discount-amount">Discount Amount (₦{min.toLocaleString()} - ₦{max.toLocaleString()})</Label>
+        <Label htmlFor="discount-amount">
+          Discount Amount (₦{min.toLocaleString()} - ₦{max.toLocaleString()})
+        </Label>
         <Input
           id="discount-amount"
           value={discountAmount}
@@ -62,7 +66,11 @@ const FutureBookingForm = () => {
           placeholder={`Enter amount to discount on your next booking (₦${min.toLocaleString()} - ₦${max.toLocaleString()})`}
         />
       </div>
-      <Button className="w-full" onClick={handleBookingSubmit} disabled={!isDiscountFormValid || isBookingSubmitting}>
+      <Button
+        className="w-full"
+        onClick={handleBookingSubmit}
+        disabled={!isDiscountFormValid || isBookingSubmitting}
+      >
         {isBookingSubmitting ? (
           <>
             <Loader className="mr-2 h-4 w-4 animate-spin" /> Applying...
@@ -71,27 +79,24 @@ const FutureBookingForm = () => {
           "Apply Discount"
         )}
       </Button>
-      
-      <AlertDialog
-          open={showDiscountAlert}
-          onOpenChange={setShowDiscountAlert}
-        >
-          <AlertDialogContent>
-            <AlertDialogHeader>
-              <AlertDialogTitle>Discount Applied Successfully</AlertDialogTitle>
-              <AlertDialogDescription>
-                Your discount has been successfully applied to your future
-                booking. You'll see the updated price reflected in your booking
-                details.
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogAction onClick={() => setShowDiscountAlert(false)}>
-                OK
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
+
+      <AlertDialog open={showDiscountAlert} onOpenChange={setShowDiscountAlert}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Discount Applied Successfully</AlertDialogTitle>
+            <AlertDialogDescription>
+              Your discount has been successfully applied to your future
+              booking. You'll see the updated price reflected in your booking
+              details.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction onClick={() => setShowDiscountAlert(false)}>
+              OK
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };

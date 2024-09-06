@@ -5,6 +5,7 @@ import SortDropdown from "./components/SortDropdown";
 import RewardItem from "./components/RewardItem";
 import Pagination from "./components/Pagination";
 import Loader from "@/components/Loader";
+import { motion } from "framer-motion";
 
 type Cashback = {
   date: string;
@@ -88,59 +89,61 @@ const History: React.FC = () => {
   const totalPages = Math.ceil(filteredRewards.length / itemsPerPage);
 
   return (
-    <main>
-      <div className="container mx-auto px-4 py-4 pb-20 lg:PY-10 xl:px-0">
-        <div className="flex justify-between items-center" >
-          <h1 className="text-gray-800 text-xl montserrat font-bold md:text-2xl">
-            Cashback History
-          </h1>
-        </div>
-
-        <div className="flex flex-col gap-8 my-8">
-          <Balance />
-
-          <div className="relative flex flex-row gap-4">
-            <input
-              type="text"
-              placeholder="Search by name, or booking ID"
-              value={searchTerm}
-              onChange={handleSearchChange}
-              className="w-full p-2 bg-transparent border border-gray-300 rounded-lg"
-            />
-
-            <SortDropdown
-              isDropdownOpen={isDropdownOpen}
-              handleSort={handleSort}
-              setIsDropdownOpen={setIsDropdownOpen}
-            />
+    <motion.div exit={{ opacity: 0 }}>
+      <main>
+        <div className="container mx-auto px-4 py-4 pb-20 lg:PY-10 xl:px-0">
+          <div className="flex justify-between items-center">
+            <h1 className="text-gray-800 text-xl montserrat font-bold md:text-2xl">
+              Cashback History
+            </h1>
           </div>
 
-          {loading ? (
-            <Loader />
-          ) : filteredRewards.length === 0 ? (
-            <div className="flex justify-center items-center h-48">
-              <p className="text-gray-600">No results found</p>
-            </div>
-          ) : (
-            <>
-              <div className="flex flex-col bg-transparent w-full space-y-3 overflow-hidden">
-                {paginatedRewards.map((reward, index) => (
-                  <React.Fragment key={index}>
-                    <RewardItem reward={reward} />
-                    {index < paginatedRewards.length - 1}
-                  </React.Fragment>
-                ))}
-              </div>
-              <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                handlePageChange={handlePageChange}
+          <div className="flex flex-col gap-8 my-8">
+            <Balance />
+
+            <div className="relative flex flex-row gap-4">
+              <input
+                type="text"
+                placeholder="Search by name, or booking ID"
+                value={searchTerm}
+                onChange={handleSearchChange}
+                className="w-full p-2 bg-transparent border border-gray-300 rounded-lg"
               />
-            </>
-          )}
+
+              <SortDropdown
+                isDropdownOpen={isDropdownOpen}
+                handleSort={handleSort}
+                setIsDropdownOpen={setIsDropdownOpen}
+              />
+            </div>
+
+            {loading ? (
+              <Loader />
+            ) : filteredRewards.length === 0 ? (
+              <div className="flex justify-center items-center h-48">
+                <p className="text-gray-600">No results found</p>
+              </div>
+            ) : (
+              <>
+                <div className="flex flex-col bg-transparent w-full space-y-3 overflow-hidden">
+                  {paginatedRewards.map((reward, index) => (
+                    <React.Fragment key={index}>
+                      <RewardItem reward={reward} />
+                      {index < paginatedRewards.length - 1}
+                    </React.Fragment>
+                  ))}
+                </div>
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  handlePageChange={handlePageChange}
+                />
+              </>
+            )}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </motion.div>
   );
 };
 
