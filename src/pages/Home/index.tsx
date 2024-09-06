@@ -27,7 +27,7 @@ const Home = () => {
           <div className="flex flex-wrap gap-8 my-8">
             <div
               data-aos="fade-up"
-              data-aos-duration="1500"
+              data-aos-duration="1000"
               className="p-6 bg-white rounded-lg shadow-md w-full overflow-hidden hover:shadow-lg transition-shadow md:w-80"
             >
               <p className="font-medium">Total Earnings</p>
@@ -39,7 +39,7 @@ const Home = () => {
 
             <div
               data-aos="fade-up"
-              data-aos-duration="1750"
+              data-aos-duration="1500"
               className="p-6 bg-white rounded-lg shadow-md w-full overflow-hidden hover:shadow-lg transition-shadow md:w-80"
             >
               <p className="font-medium">Current Balance</p>

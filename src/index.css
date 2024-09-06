@@ -26,16 +26,6 @@
   -webkit-backdrop-filter: blur(6.5px);
 }
 
-#nprogress .bar {
-  background: #0b8ed5; /* Customize color */
-}
-
-#nprogress .spinner-icon {
-  border-top-color: #0b8ed5;
-  border-left-color: #0b8ed5;
-}
-
-
 /* google-fonts */
 
 .montserrat, p {
