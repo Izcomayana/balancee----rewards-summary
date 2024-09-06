@@ -7,7 +7,7 @@ import Cashout from "./components/pages/Cashout";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="bg-[#E6F1F6]">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

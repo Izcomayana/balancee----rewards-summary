@@ -4,7 +4,7 @@ import Offcanvas from "./Offcanvas";
 const Header = () => {
   return (
     <header>
-      <div className="my-4">
+      <div className="py-4">
         <Navbar />
         <Offcanvas />
       </div>
