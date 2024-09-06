@@ -17,7 +17,7 @@ type Cashback = {
 const History: React.FC = () => {
   const [rewards, setRewards] = useState<Cashback[]>([]);
   const [sortOrder, setSortOrder] = useState<"newest" | "oldest" | "name">(
-    "newest"
+    "newest",
   );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -41,7 +41,7 @@ const History: React.FC = () => {
 
   const sortRewards = (
     data: Cashback[],
-    order: "newest" | "oldest" | "name"
+    order: "newest" | "oldest" | "name",
   ) => {
     const sortedRewards = [...data].sort((a, b) => {
       switch (order) {
@@ -78,7 +78,7 @@ const History: React.FC = () => {
 
   const paginatedRewards = filteredRewards.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   );
 
   const handlePageChange = (page: number) => {
@@ -90,7 +90,7 @@ const History: React.FC = () => {
   return (
     <main>
       <div className="container mx-auto px-4 py-4 pb-20 lg:PY-10 xl:px-0">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center" >
           <h1 className="text-gray-800 text-xl montserrat font-bold md:text-2xl">
             Cashback History
           </h1>

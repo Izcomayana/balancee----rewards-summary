@@ -10,7 +10,9 @@ const Offcanvas = () => {
       <div className="p-4">
         <div className="flex justify-between items-center">
           <div className="w-28">
-            <img src={balancee} alt="balancee-logo" className="w-full" />
+            <Link to="/">
+              <img src={balancee} alt="balancee-logo" className="w-full" />
+            </Link>
           </div>
 
           <button className="text-black" onClick={() => setIsOpen(!isOpen)}>

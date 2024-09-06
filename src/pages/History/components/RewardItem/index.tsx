@@ -9,8 +9,9 @@ type RewardItemProps = {
   };
 };
 
+
 const RewardItem: React.FC<RewardItemProps> = ({ reward }) => (
-  <div className="p-4 flex items-center rounded-lg bg-gray-100 hover:bg-[#c9e6f5] transition-all">
+  <div className="p-4 flex items-center rounded-lg bg-gray-100 hover:bg-[#c9e6f5] transition-all" data-aos="fade-up" data-aos-duration="1500">
     <div className="mr-4">
       <svg
         xmlns="http://www.w3.org/2000/svg"

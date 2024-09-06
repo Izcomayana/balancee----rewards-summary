@@ -6,7 +6,11 @@ type PaginationProps = {
   handlePageChange: (page: number) => void;
 };
 
-const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, handlePageChange }) => (
+const Pagination: React.FC<PaginationProps> = ({
+  currentPage,
+  totalPages,
+  handlePageChange,
+}) => (
   <div className="flex justify-between items-center mt-4">
     <button
       onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}

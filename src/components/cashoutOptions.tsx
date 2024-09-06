@@ -24,7 +24,9 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { toast } from "sonner";
+import { Toaster, toast } from "sonner";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export function CashoutOptions() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -60,7 +62,7 @@ export function CashoutOptions() {
   const handlePromoCode = () => {
     navigator.clipboard.writeText(promoCode);
     setPromoCode("");
-    toast("Copied!.");
+    toast.success("Copied!.");
   };
 
   const handleAccountInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -110,6 +112,9 @@ export function CashoutOptions() {
   };
 
   useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+
     const isAmountValid =
       parseInt(cashoutAmount.replace(/,/g, ""), 10) >= min &&
       parseInt(cashoutAmount.replace(/,/g, ""), 10) <= max;
@@ -173,7 +178,7 @@ export function CashoutOptions() {
           onChange={handleCashoutInput}
           onBlur={handleCashoutBlur} // Format on blur
           placeholder={`Enter amount to cashout (₦${formatNumber(
-            min
+            min,
           )} - ₦${formatNumber(max)})`}
         />
         {cashoutAmount && (
@@ -228,7 +233,7 @@ export function CashoutOptions() {
           onChange={handleDiscountInput}
           onBlur={handleDiscountBlur}
           placeholder={`Enter amount to discount on your next booking (₦${formatNumber(
-            min
+            min,
           )} - ₦${formatNumber(max)})`}
         />
         {discountAmount && (
@@ -318,7 +323,7 @@ export function CashoutOptions() {
 
   return (
     <>
-      <Card className="w-full max-w-3xl mx-auto">
+      <Card className="w-full max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="2000">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">
             Choose Your Cash-Out Method
@@ -428,6 +433,7 @@ export function CashoutOptions() {
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
+        <Toaster />
       </Card>
     </>
   );

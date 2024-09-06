@@ -7,7 +7,11 @@ type SortDropdownProps = {
   setIsDropdownOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const SortDropdown: React.FC<SortDropdownProps> = ({ isDropdownOpen, handleSort, setIsDropdownOpen }) => (
+const SortDropdown: React.FC<SortDropdownProps> = ({
+  isDropdownOpen,
+  handleSort,
+  setIsDropdownOpen,
+}) => (
   <div className="relative">
     <div
       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
