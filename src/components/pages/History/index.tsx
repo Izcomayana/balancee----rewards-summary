@@ -1,9 +1,9 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import axios from "axios";
 import Balance from "@/components/Balance";
-import SortDropdown from "@/components/SortDropdown";
-import RewardItem from "@/components/RewardItem";
-import Pagination from "@/components/Pagination";
+import SortDropdown from "@/components/pages/History/components/SortDropdown";
+import RewardItem from "@/components/pages/History/components/RewardItem";
+import Pagination from "@/components/pages/History/components/Pagination";
 import Loader from "@/components/Loader";
 
 type Cashback = {
@@ -123,11 +123,11 @@ const History: React.FC = () => {
             </div>
           ) : (
             <>
-              <div className="flex flex-col bg-white rounded-lg w-full overflow-hidden">
+              <div className="flex flex-col bg-white w-full space-y-3 overflow-hidden">
                 {paginatedRewards.map((reward, index) => (
                   <React.Fragment key={index}>
                     <RewardItem reward={reward} />
-                    {index < paginatedRewards.length - 1 && <hr />}
+                    {index < paginatedRewards.length - 1}
                   </React.Fragment>
                 ))}
               </div>

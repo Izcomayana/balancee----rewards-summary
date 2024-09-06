@@ -10,7 +10,7 @@ type RewardItemProps = {
 };
 
 const RewardItem: React.FC<RewardItemProps> = ({ reward }) => (
-  <div className="p-4 flex items-center bg-gray-50 hover:bg-gray-200 transition-all">
+  <div className="p-4 flex items-center rounded-lg bg-gray-100 hover:bg-gray-300 transition-all">
     <div className="mr-4">
       <svg
         xmlns="http://www.w3.org/2000/svg"

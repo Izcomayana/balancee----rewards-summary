@@ -10,7 +10,11 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, handle
   <div className="flex justify-between items-center mt-4">
     <button
       onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
-      className="p-2 px-4 bg-gray-300 rounded-lg"
+      className={`p-2 px-4 rounded-lg text-gray-700 ${
+        currentPage === 1
+          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+          : "bg-gray-200 hover:bg-gray-400"
+      }`}
       disabled={currentPage === 1}
     >
       Previous
@@ -20,7 +24,11 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, handle
     </span>
     <button
       onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
-      className="p-2 px-4 bg-gray-300 rounded-lg"
+      className={`p-2 px-4 rounded-lg ${
+        currentPage === totalPages
+          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+          : "bg-gray-200 hover:bg-gray-400"
+      }`}
       disabled={currentPage === totalPages}
     >
       Next
