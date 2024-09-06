@@ -25,7 +25,7 @@ const Offcanvas = () => {
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
               />
             </svg>
           </button>
@@ -33,13 +33,13 @@ const Offcanvas = () => {
 
         <div
           className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${
-            isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+            isOpen ? "opacity-100 z-10" : "opacity-0 pointer-events-none"
           }`}
           onClick={() => setIsOpen(false)}
         ></div>
         <div
           className={`fixed top-0 left-0 w-[70%] h-full bg-white shadow-lg transform transition-transform duration-300 md:w-[55%] ${
-            isOpen ? "translate-x-0" : "-translate-x-full"
+            isOpen ? "translate-x-0 z-20" : "-translate-x-full"
           }`}
         >
           <div className="p-8">

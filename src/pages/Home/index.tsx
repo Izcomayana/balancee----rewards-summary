@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <main>
-      <div className="container mx-auto px-4 my-4 lg:my-10 xl:px-0">
+      <div className="container mx-auto px-4 pt-4 pb-20 md:h-screen lg:pt-10 xl:px-0">
         <div className="flex justify-between items-center">
           <h1 className="text-gray-800 text-xl montserrat font-bold md:text-2xl">
             Earnings Overview
@@ -34,13 +34,6 @@ const Home = () => {
             <p className="mt-10 text-2xl text-gray-800 font-bold">123+</p>
             <span className="text-xs text-gray-700">
               +10.1% from last month
-            </span>
-          </div>
-          <div className="p-6 bg-white rounded-lg shadow-md w-full overflow-hidden hover:shadow-lg transition-shadow md:w-80">
-            <p className="font-medium">Total Cashback</p>
-            <p className="mt-10 text-2xl text-gray-800 font-bold">₦43,000</p>
-            <span className="text-xs text-gray-700">
-              +20.1% from last month
             </span>
           </div>
         </div>

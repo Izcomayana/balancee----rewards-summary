@@ -11,7 +11,7 @@ const SortDropdown: React.FC<SortDropdownProps> = ({ isDropdownOpen, handleSort,
   <div className="relative">
     <div
       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-      className="p-2 border border-gray-300 w-fit cursor-pointer rounded-lg bg-white flex items-center space-x-2"
+      className="p-2 border border-gray-300 bg-transparent w-fit cursor-pointer rounded-lg flex items-center space-x-2"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -31,22 +31,22 @@ const SortDropdown: React.FC<SortDropdownProps> = ({ isDropdownOpen, handleSort,
     </div>
 
     {isDropdownOpen && (
-      <div className="absolute right-0 top-12 w-48 bg-white border border-gray-300 rounded-lg shadow-lg z-10">
+      <div className="absolute right-0 top-12 w-48 bg-transparent border border-gray-300 rounded-lg shadow-lg z-10">
         <Button
           onClick={() => handleSort("name")}
-          className="w-full bg-transparent text-gray-800 text-left px-4 py-2 hover:bg-gray-100"
+          className="w-full bg-transparent text-gray-800 bg-white text-left px-4 py-2 hover:bg-gray-100"
         >
           Name
         </Button>
         <Button
           onClick={() => handleSort("oldest")}
-          className="my-2 w-full bg-transparent text-gray-800 text-left px-4 py-2 hover:bg-gray-100"
+          className="my-2 w-full bg-transparent text-gray-800 bg-white text-left px-4 py-2 hover:bg-gray-100"
         >
           Oldest
         </Button>
         <Button
           onClick={() => handleSort("newest")}
-          className="w-full bg-transparent text-gray-800 text-left px-4 py-2 hover:bg-gray-100"
+          className="w-full bg-transparent text-gray-800 bg-white text-left px-4 py-2 hover:bg-gray-100"
         >
           Newest
         </Button>

@@ -318,7 +318,7 @@ export function CashoutOptions() {
 
   return (
     <>
-      <Card className="w-full max-w-2xl mx-auto lg:mx-0">
+      <Card className="w-full max-w-3xl mx-auto">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">
             Choose Your Cash-Out Method
@@ -384,7 +384,7 @@ export function CashoutOptions() {
           )}
         </CardContent>
         <Separator className="my-4" />
-        <CardFooter className="flex justify-between">
+        <CardFooter className="flex justify-between flex-col md:flex-row">
           <p className="text-sm text-muted-foreground">
             Available Cashback: ₦{formatNumber(max)}
           </p>

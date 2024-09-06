@@ -1,9 +1,9 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import axios from "axios";
 import Balance from "@/components/Balance";
-import SortDropdown from "@/components/pages/History/components/SortDropdown";
-import RewardItem from "@/components/pages/History/components/RewardItem";
-import Pagination from "@/components/pages/History/components/Pagination";
+import SortDropdown from "./components/SortDropdown";
+import RewardItem from "./components/RewardItem";
+import Pagination from "./components/Pagination";
 import Loader from "@/components/Loader";
 
 type Cashback = {
@@ -89,7 +89,7 @@ const History: React.FC = () => {
 
   return (
     <main>
-      <div className="container mx-auto px-4 my-4 lg:my-10 xl:px-0">
+      <div className="container mx-auto px-4 py-4 pb-20 lg:PY-10 xl:px-0">
         <div className="flex justify-between items-center">
           <h1 className="text-gray-800 text-xl montserrat font-bold md:text-2xl">
             Cashback History
@@ -105,7 +105,7 @@ const History: React.FC = () => {
               placeholder="Search by name, or booking ID"
               value={searchTerm}
               onChange={handleSearchChange}
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 bg-transparent border border-gray-300 rounded-lg"
             />
 
             <SortDropdown
@@ -123,7 +123,7 @@ const History: React.FC = () => {
             </div>
           ) : (
             <>
-              <div className="flex flex-col bg-white w-full space-y-3 overflow-hidden">
+              <div className="flex flex-col bg-transparent w-full space-y-3 overflow-hidden">
                 {paginatedRewards.map((reward, index) => (
                   <React.Fragment key={index}>
                     <RewardItem reward={reward} />

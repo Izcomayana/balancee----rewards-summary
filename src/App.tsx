@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "@/components/pages/Home";
-import History from "./components/pages/History";
+import Home from "@/pages/Home";
+import History from "./pages/History";
 import Header from "./components/Header";
-import Cashout from "./components/pages/Cashout";
+import Cashout from "./pages/Cashout";
 
 function App() {
   return (
     <Router>
-      <div className="bg-[#E6F1F6]">
+      <div className="">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
