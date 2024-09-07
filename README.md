@@ -1,10 +1,8 @@
+# Job Application Task - README
+
 Balancee Rewards Summary Page
 
 Hi, I'm **Israel** and this is the cooking process of this yummy food :bowl_with_spoon:
-
-
-
-# Job Application Task - README
 
 ## Overview
 
