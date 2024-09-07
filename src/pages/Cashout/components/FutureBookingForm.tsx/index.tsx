@@ -12,7 +12,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { getMaxValue, updateMaxValue, getStoredMaxValue  } from "@/constants";
+import { getMaxValue, updateMaxValue, getStoredMaxValue } from "@/constants";
 
 const FutureBookingForm = () => {
   const [bookingId, setBookingId] = useState<string>("");
@@ -36,7 +36,7 @@ const FutureBookingForm = () => {
       };
       fetchMax();
     }
-    
+
     const isBookingValid =
       parseInt(discountAmount.replace(/,/g, ""), 10) >= min &&
       parseInt(discountAmount.replace(/,/g, ""), 10) <= max;
@@ -45,12 +45,12 @@ const FutureBookingForm = () => {
 
   const handleBookingSubmit = () => {
     const withdrawalAmount = parseInt(discountAmount.replace(/,/g, ""), 10);
-    
+
     setIsBookingSubmitting(true);
-      const newMax = max - withdrawalAmount;
-      updateMaxValue(newMax); 
-      setMax(newMax);
-      setTimeout(() => {
+    const newMax = max - withdrawalAmount;
+    updateMaxValue(newMax);
+    setMax(newMax);
+    setTimeout(() => {
       setIsBookingSubmitting(false);
       setBookingId("");
       setDiscountAmount("");

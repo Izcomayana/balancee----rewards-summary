@@ -21,9 +21,9 @@ const Navbar = () => {
                 <Link to="/history">History</Link>
               </li>
               <Link to="/cashout">
-              <li className="cursor-pointer text-xl font-medium text-gray-50 rounded-3xl bg-[#0870A7] p-4 hover:bg-[#086fa7d6] transition-all">
-                Cash Out
-              </li>
+                <li className="cursor-pointer text-xl font-medium text-gray-50 rounded-3xl bg-[#0870A7] p-4 hover:bg-[#086fa7d6] transition-all">
+                  Cash Out
+                </li>
               </Link>
             </ul>
           </nav>

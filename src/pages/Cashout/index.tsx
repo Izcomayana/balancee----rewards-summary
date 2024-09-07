@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
-import { getMaxValue, getStoredMaxValue  } from "@/constants";
+import { getMaxValue, getStoredMaxValue } from "@/constants";
 
 const Cashout: React.FC = () => {
   const [max, setMax] = useState<number>(0);
@@ -48,7 +48,9 @@ const Cashout: React.FC = () => {
                 <p className="font-medium text-xl">Available balance</p>
               </div>
 
-              <p className="mt-10 text-2xl text-gray-800 font-bold">₦{max.toLocaleString("en-US")}</p>
+              <p className="mt-10 text-2xl text-gray-800 font-bold">
+                ₦{max.toLocaleString("en-US")}
+              </p>
               <span className="text-xs text-gray-700">
                 min cash out: ₦{min}
               </span>

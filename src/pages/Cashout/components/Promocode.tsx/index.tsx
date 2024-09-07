@@ -22,7 +22,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
-import { getMaxValue, updateMaxValue, getStoredMaxValue  } from "@/constants";
+import { getMaxValue, updateMaxValue, getStoredMaxValue } from "@/constants";
 
 const PromoCode = () => {
   const [promoCode, setPromoCode] = useState<string>("");
@@ -46,7 +46,7 @@ const PromoCode = () => {
 
     setTimeout(() => {
       const newMax = max - withdrawalAmount;
-      updateMaxValue(newMax); 
+      updateMaxValue(newMax);
       setMax(newMax);
       setIsSubmitting(false);
       setCashoutAmount("");
@@ -83,31 +83,32 @@ const PromoCode = () => {
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-      <div className="space-y-2">
-        <Label htmlFor="amount">
-          Amount to Convert (₦{min.toLocaleString()} - ₦{max.toLocaleString()})
-        </Label>
-        <Input
-          id="amount"
-          type="text"
-          value={cashoutAmount}
-          onChange={(e) => setCashoutAmount(e.target.value)}
-          placeholder={`Enter amount to convert (₦${min.toLocaleString()} - ₦${max.toLocaleString()})`}
-        />
-      </div>
-      <Button
-        className="w-full"
-        onClick={handleSubmit}
-        disabled={!isFormValid || isSubmitting}
-      >
-        {isSubmitting ? (
-          <>
-            <Loader className="mr-2 h-4 w-4 animate-spin" /> Generating...
-          </>
-        ) : (
-          "Generate Promo Code"
-        )}
-      </Button>
+        <div className="space-y-2">
+          <Label htmlFor="amount">
+            Amount to Convert (₦{min.toLocaleString()} - ₦{max.toLocaleString()}
+            )
+          </Label>
+          <Input
+            id="amount"
+            type="text"
+            value={cashoutAmount}
+            onChange={(e) => setCashoutAmount(e.target.value)}
+            placeholder={`Enter amount to convert (₦${min.toLocaleString()} - ₦${max.toLocaleString()})`}
+          />
+        </div>
+        <Button
+          className="w-full"
+          onClick={handleSubmit}
+          disabled={!isFormValid || isSubmitting}
+        >
+          {isSubmitting ? (
+            <>
+              <Loader className="mr-2 h-4 w-4 animate-spin" /> Generating...
+            </>
+          ) : (
+            "Generate Promo Code"
+          )}
+        </Button>
         <div className="flex items-center space-x-2">
           <Input
             value={promoCode}

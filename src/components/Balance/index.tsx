@@ -9,11 +9,11 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
-import { getMaxValue, getStoredMaxValue  } from "@/constants";
+import { getMaxValue, getStoredMaxValue } from "@/constants";
 
 const Balance = () => {
   const [max, setMax] = useState<number>(0);
-  
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -48,7 +48,9 @@ const Balance = () => {
               </DialogTrigger>
             </div>
 
-            <p className="mt-10 text-2xl text-gray-800 font-bold">₦{max.toLocaleString("en-US")}</p>
+            <p className="mt-10 text-2xl text-gray-800 font-bold">
+              ₦{max.toLocaleString("en-US")}
+            </p>
             <span className="text-xs text-gray-700">
               +27.5% from last month
             </span>
