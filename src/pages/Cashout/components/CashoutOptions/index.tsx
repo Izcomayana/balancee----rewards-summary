@@ -16,15 +16,27 @@ import PromoCode from "../Promocode.tsx";
 import { Toaster } from "sonner";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { getMaxValue, getStoredMaxValue  } from "@/constants/max";
 
 export default function CashoutOptions() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const max = 21200;
+  const [max, setMax] = useState<number>(0);
 
   useEffect(() => {
     AOS.init();
     AOS.refresh();
-  }, []);
+
+    const storedMax = getStoredMaxValue();
+    if (storedMax !== null) {
+      setMax(storedMax);
+    } else {
+      const fetchMax = async () => {
+        const maxValue = await getMaxValue();
+        setMax(maxValue);
+      };
+      fetchMax();
+    }
+  }, [max]);
 
   return (
     <>

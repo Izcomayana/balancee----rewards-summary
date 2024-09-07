@@ -29,9 +29,10 @@ const History: React.FC = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get<Cashback[]>("/data.json")
+      .get("/data.json")
       .then((response) => {
-        sortRewards(response.data, sortOrder);
+        const historyData = response.data.history;
+        sortRewards(historyData, sortOrder);
         setLoading(false);
       })
       .catch((error) => {

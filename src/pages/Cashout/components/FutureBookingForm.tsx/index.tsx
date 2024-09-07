@@ -12,6 +12,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { getMaxValue, updateMaxValue, getStoredMaxValue  } from "@/constants/max";
 
 const FutureBookingForm = () => {
   const [bookingId, setBookingId] = useState<string>("");
@@ -21,19 +22,35 @@ const FutureBookingForm = () => {
   const [isBookingSubmitting, setIsBookingSubmitting] =
     useState<boolean>(false);
   const [showDiscountAlert, setShowDiscountAlert] = useState<boolean>(false);
-  const max = 21200;
+  const [max, setMax] = useState<number>(0);
   const min = 100;
 
   useEffect(() => {
+    const storedMax = getStoredMaxValue();
+    if (storedMax !== null) {
+      setMax(storedMax);
+    } else {
+      const fetchMax = async () => {
+        const maxValue = await getMaxValue();
+        setMax(maxValue);
+      };
+      fetchMax();
+    }
+    
     const isBookingValid =
       parseInt(discountAmount.replace(/,/g, ""), 10) >= min &&
       parseInt(discountAmount.replace(/,/g, ""), 10) <= max;
     setIsDiscountFormValid(bookingId.length === 5 && isBookingValid);
-  }, [bookingId, discountAmount]);
+  }, [bookingId, discountAmount, max]);
 
   const handleBookingSubmit = () => {
+    const withdrawalAmount = parseInt(discountAmount.replace(/,/g, ""), 10);
+    
     setIsBookingSubmitting(true);
-    setTimeout(() => {
+      const newMax = max - withdrawalAmount;
+      updateMaxValue(newMax); 
+      setMax(newMax);
+      setTimeout(() => {
       setIsBookingSubmitting(false);
       setBookingId("");
       setDiscountAmount("");

@@ -20,9 +20,11 @@ const Navbar = () => {
               <li className="nav-li text-xl font-medium text-gray-500 transition-all hover:text-[#0870A7] hover:border-b-2 focus:text-[#0870A7] focus:border-b-2 active:text-[#0870A7] active:border-b-2">
                 <Link to="/history">History</Link>
               </li>
+              <Link to="/cashout">
               <li className="cursor-pointer text-xl font-medium text-gray-50 rounded-3xl bg-[#0870A7] p-4 hover:bg-[#086fa7d6] transition-all">
-                <Link to="/cashout">Cash Out</Link>
+                Cash Out
               </li>
+              </Link>
             </ul>
           </nav>
         </div>

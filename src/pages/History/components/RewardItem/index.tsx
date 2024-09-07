@@ -35,7 +35,7 @@ const RewardItem: React.FC<RewardItemProps> = ({ reward }) => (
     <div className="flex flex-row justify-between w-full">
       <div>
         <p className="text-sm md:text-lg lg:text-lg">{reward.service}</p>
-        <p className="text-[8px] text-gray-400 md:text-[10px] lg:text-xs lg:mt-1">
+        <p className="text-[10px] text-gray-400 md:text-xs lg:text-sm lg:mt-1">
           ID: {reward.bookingId}
         </p>
       </div>
@@ -43,7 +43,7 @@ const RewardItem: React.FC<RewardItemProps> = ({ reward }) => (
         <p className="text-sm text-green-400 md:text-lg lg:text-lg">
           +₦{reward.amountEarned}
         </p>
-        <p className="text-[8px] text-gray-400 md:text-[10px] lg:text-xs lg:mt-1">
+        <p className="text-[10px] text-gray-400 md:text-xs lg:text-sm lg:mt-1">
           {reward.date}
         </p>
       </div>

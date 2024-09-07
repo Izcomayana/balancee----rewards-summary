@@ -1,17 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CashoutOptions from "./components/CashoutOptions";
 import { Card } from "@/components/ui/card";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
+import { getMaxValue, getStoredMaxValue  } from "@/constants/max";
 
 const Cashout: React.FC = () => {
-  const min = 100;
+  const [max, setMax] = useState<number>(0);
+  const min = 50;
 
   useEffect(() => {
     AOS.init();
     AOS.refresh();
-  }, []);
+    const storedMax = getStoredMaxValue();
+    if (storedMax !== null) {
+      setMax(storedMax);
+    } else {
+      const fetchMax = async () => {
+        const maxValue = await getMaxValue();
+        setMax(maxValue);
+      };
+      fetchMax();
+    }
+  }, [max]);
 
   return (
     <motion.div exit={{ opacity: 0 }}>
@@ -36,16 +48,14 @@ const Cashout: React.FC = () => {
                 <p className="font-medium text-xl">Available balance</p>
               </div>
 
-              <p className="mt-10 text-2xl text-gray-800 font-bold">₦21, 200</p>
+              <p className="mt-10 text-2xl text-gray-800 font-bold">₦{max.toLocaleString("en-US")}</p>
               <span className="text-xs text-gray-700">
                 min cash out: ₦{min}
               </span>
             </Card>
           </div>
 
-          <div className="">
-            <CashoutOptions />
-          </div>
+          <CashoutOptions />
         </div>
       </main>
     </motion.div>

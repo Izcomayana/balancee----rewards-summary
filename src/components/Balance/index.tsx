@@ -8,13 +8,27 @@ import {
 } from "@/components/ui/dialog";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { getMaxValue, getStoredMaxValue  } from "@/constants/max";
 
 const Balance = () => {
+  const [max, setMax] = useState<number>(0);
+  
   useEffect(() => {
     AOS.init();
     AOS.refresh();
-  }, []);
+
+    const storedMax = getStoredMaxValue();
+    if (storedMax !== null) {
+      setMax(storedMax);
+    } else {
+      const fetchMax = async () => {
+        const maxValue = await getMaxValue();
+        setMax(maxValue);
+      };
+      fetchMax();
+    }
+  }, [max]);
 
   return (
     <>
@@ -34,7 +48,7 @@ const Balance = () => {
               </DialogTrigger>
             </div>
 
-            <p className="mt-10 text-2xl text-gray-800 font-bold">₦21, 200</p>
+            <p className="mt-10 text-2xl text-gray-800 font-bold">₦{max.toLocaleString("en-US")}</p>
             <span className="text-xs text-gray-700">
               +27.5% from last month
             </span>
