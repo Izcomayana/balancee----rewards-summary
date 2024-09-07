@@ -10,6 +10,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import { getMaxValue, getStoredMaxValue } from "@/constants";
+import { Button } from "../ui/button";
+import { Link } from "react-router-dom";
 
 const Balance = () => {
   const [max, setMax] = useState<number>(0);
@@ -78,6 +80,11 @@ const Balance = () => {
                 You can choose to convert your cashback into promo codes which
                 you can apply to future bookings.
               </p>
+            </div>
+            <div className="w-full flex justify-center items-center">
+              <Link to="/Cashout" className="mt-4">
+                <Button className="lg:px-8">Cashout</Button>
+              </Link>
             </div>
           </DialogDescription>
         </DialogContent>
