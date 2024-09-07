@@ -51,11 +51,17 @@ const WithdrawalTable: React.FC<WithdrawalTableProps> = ({
     <TableBody>
       {withdrawals.map((withdrawal) => (
         <TableRow key={withdrawal.id}>
-          <TableCell className="hidden md:table-cell">{withdrawal.bankName}</TableCell>
+          <TableCell className="hidden md:table-cell">
+            {withdrawal.bankName}
+          </TableCell>
           <TableCell>{withdrawal.accountName}</TableCell>
-          <TableCell className="hidden md:table-cell">{withdrawal.accountNumber}</TableCell>
+          <TableCell className="hidden md:table-cell">
+            {withdrawal.accountNumber}
+          </TableCell>
           <TableCell>₦{parseInt(withdrawal.amount).toLocaleString()}</TableCell>
-          <TableCell className="hidden md:table-cell">{withdrawal.date}</TableCell>
+          <TableCell className="hidden md:table-cell">
+            {withdrawal.date}
+          </TableCell>
           <TableCell>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -66,7 +72,9 @@ const WithdrawalTable: React.FC<WithdrawalTableProps> = ({
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                <DropdownMenuItem onClick={() => copyToClipboard(withdrawal.id)}>
+                <DropdownMenuItem
+                  onClick={() => copyToClipboard(withdrawal.id)}
+                >
                   <Copy className="mr-2 h-4 w-4" /> Copy ID
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => onViewDetails(withdrawal)}>

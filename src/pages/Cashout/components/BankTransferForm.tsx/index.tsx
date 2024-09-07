@@ -69,7 +69,7 @@ const BankTransferForm = () => {
       bankName.trim() !== "" &&
         accountName.trim() !== "" &&
         accountNumber.length === 10 &&
-        isAmountValid
+        isAmountValid,
     );
   }, [accountName, accountNumber, bankName, cashoutAmount, max]);
 

@@ -128,7 +128,7 @@ const PromoCode = () => {
       <CardFooter className="flex justify-between">
         <p className="text-sm text-muted-foreground">Valid for 30 days</p>
         <p className="text-sm font-medium">
-          Value: ₦{max.toLocaleString("en-US")}
+          Balance: ₦{max.toLocaleString("en-US")}
         </p>
       </CardFooter>
     </Card>
