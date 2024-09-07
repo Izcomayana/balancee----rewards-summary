@@ -12,7 +12,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { getMaxValue, updateMaxValue, getStoredMaxValue  } from "@/constants/max";
+import { getMaxValue, updateMaxValue, getStoredMaxValue  } from "@/constants";
 
 const FutureBookingForm = () => {
   const [bookingId, setBookingId] = useState<string>("");

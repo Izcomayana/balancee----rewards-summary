@@ -1,5 +1,15 @@
 {
   "max": 25700,
+  "transactions": [
+    {
+      "id": "6h1i0jy76",
+      "bankName": "Opay",
+      "accountName": "John Doe",
+      "accountNumber": "6112345678",
+      "amount": "5000",
+      "date": "9/7/2024, 11:17:12 AM"
+    }
+  ],
   "history": [
   { "date": "2024-05-04", "amountEarned": 100, "service": "Oil Change", "bookingId": "12345", "earnings": true },
   { "date": "2024-08-25", "amountEarned": 705, "service": "Tire Replacement", "bookingId": "12346", "earnings": false },

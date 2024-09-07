@@ -13,7 +13,10 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { getMaxValue, updateMaxValue, getStoredMaxValue  } from "@/constants/max";
+import {
+  getMaxValue, updateMaxValue, getStoredMaxValue,
+  getTransactions, updateTransactions, getStoredTransactions
+} from "@/constants";
 import {
   Table,
   TableBody,
@@ -54,16 +57,26 @@ const BankTransferForm = () => {
   const min = 50;
 
   useEffect(() => {
-    const storedMax = getStoredMaxValue();
-    if (storedMax !== null) {
-      setMax(storedMax);
-    } else {
-      const fetchMax = async () => {
+    const fetchData = async () => {
+      const storedMax = getStoredMaxValue();
+      if (storedMax !== null) {
+        setMax(storedMax);
+      } else {
         const maxValue = await getMaxValue();
         setMax(maxValue);
-      };
-      fetchMax();
-    }
+      }
+
+      const storedWithdrawals = getStoredTransactions();
+      if (storedWithdrawals) {
+        setWithdrawals(storedWithdrawals);
+      } else {
+        const transactions = await getTransactions();
+        setWithdrawals(transactions);
+        updateTransactions(transactions);
+      }
+    };
+
+    fetchData();
 
     const isAmountValid =
       parseInt(cashoutAmount.replace(/,/g, ""), 10) >= min &&
@@ -85,6 +98,7 @@ const BankTransferForm = () => {
     setIsSubmitting(true);
 
     setTimeout(() => {
+      setIsSubmitting(false);
       const newWithdrawal: Withdrawal = {
         id: generateId(),
         bankName,
@@ -93,11 +107,16 @@ const BankTransferForm = () => {
         amount: cashoutAmount,
         date: new Date().toLocaleString(),
       };
-      setWithdrawals([...withdrawals, newWithdrawal]);
+
+      const updatedWithdrawals = [...withdrawals, newWithdrawal];
+      setWithdrawals(updatedWithdrawals);
+
+      updateTransactions(updatedWithdrawals);
+
       const newMax = max - withdrawalAmount;
       updateMaxValue(newMax); 
       setMax(newMax);
-      setIsSubmitting(false);
+      
       setBankName("");
       setAccountName("");
       setAccountNumber("");

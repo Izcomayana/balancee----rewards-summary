@@ -16,7 +16,7 @@ import PromoCode from "../Promocode.tsx";
 import { Toaster } from "sonner";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { getMaxValue, getStoredMaxValue  } from "@/constants/max";
+import { getMaxValue, getStoredMaxValue  } from "@/constants/index.ts";
 
 export default function CashoutOptions() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);

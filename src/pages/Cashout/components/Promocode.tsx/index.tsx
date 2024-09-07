@@ -22,7 +22,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
-import { getMaxValue, updateMaxValue, getStoredMaxValue  } from "@/constants/max";
+import { getMaxValue, updateMaxValue, getStoredMaxValue  } from "@/constants";
 
 const PromoCode = () => {
   const [promoCode, setPromoCode] = useState<string>("");

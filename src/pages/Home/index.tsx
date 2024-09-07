@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { getMaxValue, getStoredMaxValue  } from "@/constants/max";
+import { getMaxValue, getStoredMaxValue  } from "@/constants";
 
 const Home = () => {
   const [max, setMax] = useState<number>(0);

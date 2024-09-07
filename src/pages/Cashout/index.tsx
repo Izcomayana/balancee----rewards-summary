@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
-import { getMaxValue, getStoredMaxValue  } from "@/constants/max";
+import { getMaxValue, getStoredMaxValue  } from "@/constants";
 
 const Cashout: React.FC = () => {
   const [max, setMax] = useState<number>(0);
