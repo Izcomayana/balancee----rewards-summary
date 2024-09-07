@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Home from "@/pages"
-import History from "./pages/history";
+import History from "./pages/history/index";
 import Header from "./components/Header";
-import Cashout from "./pages/cashout";
+import Cashout from "./pages/cashout/index";
 
 function AnimatedRoutes() {
   const location = useLocation();

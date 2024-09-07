@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import balancee from "../../../../public/balancee-logo.png";
+import balancee from "/balancee-logo.png";
 
 const Navbar = () => {
   return (
