@@ -33,12 +33,15 @@ This application is built using React with TypeScript, and employs various techn
 - **Google Fonts**: Specifically the Montserrat font for improved typography.
 
 
+
+
 ## Architecture and Structure
 The application consists of three main pages:
 
 ###  1. Home Page
 
 **Overview**: Displays key metrics such as total earnings, current balance, and total bookings.
+
 **Purpose**: Provides users with a quick summary of their earnings and balance.
 
 
@@ -66,10 +69,14 @@ The application consists of three main pages:
 Promo Codes: Convert cashback into promo codes for future bookings.
 
 
-Additional Features:
+
+
+## Additional Features:
 
 - **Balance Display**: Shows the available balance and cashback history.
 - **Local Storage** and **Backend Integration**: Persist the available balance in local storage and on the backend, ensuring updates whenever cashout options are utilized.
+
+
 
 
 
@@ -82,6 +89,7 @@ Additional Features:
 
 
 
+
 ## Implementation Details
 - **State Management**: State is managed using React’s useState and useEffect hooks to handle user interactions and data fetching.
 - **Form Validation**: Ensured form validation on the cashout page to provide a smooth user experience.
@@ -89,10 +97,12 @@ Additional Features:
 
 
 
+
 ## Future Improvements
 - **Enhanced Security**: Integrate real backend services with secure authentication mechanisms.
 - **User Experience**: Further improvements in UI/UX based on user feedback.
 - **Scalability**: Optimize for scalability as the number of users and transactions increases.
+
 
 
 
