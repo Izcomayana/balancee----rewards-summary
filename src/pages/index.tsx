@@ -33,7 +33,7 @@ const Home = () => {
               Earnings Overview
             </h1>
 
-            <Link to="/history" className="underline text-sm md:text-lg">
+            <Link to="/History" className="underline text-sm md:text-lg">
               View full history➭
             </Link>
           </div>

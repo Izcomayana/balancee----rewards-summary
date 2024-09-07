@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Home from "@/pages"
-import HistoryPage from "@/pages/history";
+import HistoryPage from "@/pages/History";
 import Header from "./components/Header";
-import CashoutPage from "@/pages/cashout";
+import CashoutPage from "@/pages/Cashout";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -17,8 +17,8 @@ function AnimatedRoutes() {
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
-        <Route path="/history" element={<HistoryPage />} />
-        <Route path="/cashout" element={<CashoutPage />} />
+        <Route path="/History" element={<HistoryPage />} />
+        <Route path="/Cashout" element={<CashoutPage />} />
       </Routes>
     </AnimatePresence>
   );

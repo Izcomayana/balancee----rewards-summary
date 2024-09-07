@@ -95,7 +95,7 @@ const Offcanvas = () => {
                   </span>
                 </li>
               </Link>
-              <Link to="/history">
+              <Link to="/History">
                 <li
                   className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]"
                   onClick={() => setIsOpen(false)}
@@ -120,7 +120,7 @@ const Offcanvas = () => {
                   </span>
                 </li>
               </Link>
-              <Link to="/cashout">
+              <Link to="/Cashout">
                 <li
                   className="p-4 rounded-xl text-gray-700 text-xl font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]"
                   onClick={() => setIsOpen(false)}

@@ -107,7 +107,7 @@ export default function CashoutOptions() {
           <p className="text-sm text-muted-foreground">
             Available Cashback: ₦{max.toLocaleString("en-US")}
           </p>
-          <Link to="/history">
+          <Link to="/History">
             <Button variant="ghost">View Cashback History</Button>
           </Link>
         </CardFooter>
