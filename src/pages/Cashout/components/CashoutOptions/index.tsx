@@ -17,6 +17,7 @@ import { Toaster } from "sonner";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { getMaxValue, getStoredMaxValue  } from "@/constants/index.ts";
+import { Link } from "react-router-dom";
 
 export default function CashoutOptions() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -106,7 +107,9 @@ export default function CashoutOptions() {
           <p className="text-sm text-muted-foreground">
             Available Cashback: ₦{max.toLocaleString("en-US")}
           </p>
-          <Button variant="ghost">View Cashback History</Button>
+          <Link to="/history">
+            <Button variant="ghost">View Cashback History</Button>
+          </Link>
         </CardFooter>
         <Toaster />
       </Card>
