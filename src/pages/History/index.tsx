@@ -94,7 +94,7 @@ const HistoryPage = () => {
       <main>
         <div className="container mx-auto px-4 py-4 pb-20 lg:PY-10 xl:px-0">
           <div className="flex justify-between items-center">
-            <h1 className="text-gray-800 text-lg montserrat font-bold md:text-2xl">
+            <h1 className="text-gray-800 montserrat font-bold md:text-lg xl:text-xl">
               Cashback History
             </h1>
           </div>
@@ -108,7 +108,7 @@ const HistoryPage = () => {
                 placeholder="Search by name, or booking ID"
                 value={searchTerm}
                 onChange={handleSearchChange}
-                className="w-full p-2 bg-transparent border border-gray-300 rounded-lg"
+                className="w-full p-1 bg-transparent border border-gray-300 rounded-lg lg:p-2"
               />
 
               <SortDropdown

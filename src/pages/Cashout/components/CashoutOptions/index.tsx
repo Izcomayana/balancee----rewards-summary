@@ -47,10 +47,10 @@ export default function CashoutOptions() {
         data-aos-duration="2000"
       >
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">
+          <CardTitle className="text-lg font-bold text-center">
             Choose Your Cash-Out Method
           </CardTitle>
-          <CardDescription className="text-center">
+          <CardDescription className="text-center text-sm">
             Select how you'd like to receive your cashback
           </CardDescription>
         </CardHeader>

@@ -67,10 +67,10 @@ const Offcanvas = () => {
                 </svg>
               </button>
             </div>
-            <ul className="mt-24 flex flex-col gap-2">
+            <ul className="mt-10 flex flex-col gap-2">
               <Link to="/">
                 <li
-                  className="p-4 rounded-xl text-gray-700 text-lg font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]"
+                  className="py-4 rounded-xl text-gray-700 font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]"
                   onClick={() => setIsOpen(false)}
                 >
                   <span className="flex items-end">
@@ -97,7 +97,7 @@ const Offcanvas = () => {
               </Link>
               <Link to="/History">
                 <li
-                  className="p-4 rounded-xl text-gray-700 text-lg font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]"
+                  className="py-4 rounded-xl text-gray-700 font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]"
                   onClick={() => setIsOpen(false)}
                 >
                   <span className="flex items-end">
@@ -122,7 +122,7 @@ const Offcanvas = () => {
               </Link>
               <Link to="/Cashout">
                 <li
-                  className="p-4 rounded-xl text-gray-700 text-lg font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]"
+                  className="py-4 rounded-xl text-gray-700 font-medium transition-all hover:text-[#1D72A7] hover:bg-[#E6F1F6]"
                   onClick={() => setIsOpen(false)}
                 >
                   <span className="flex items-end">

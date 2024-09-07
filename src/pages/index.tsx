@@ -96,7 +96,9 @@ const Home = () => {
               className="p-6 bg-white rounded-lg shadow-md w-full overflow-hidden hover:shadow-lg transition-shadow md:w-80"
             >
               <p className="font-medium text-sm">Total Earnings</p>
-              <p className="mt-10 text-xl text-gray-800 font-bold lg:text-2xl">₦45,670</p>
+              <p className="mt-6 text-lg text-gray-800 font-bold lg:text-xl">
+                ₦45,670
+              </p>
               <span className="text-[10px] text-gray-700">
                 +17.1% from last month
               </span>
@@ -108,7 +110,7 @@ const Home = () => {
               className="p-6 bg-white rounded-lg shadow-md w-full overflow-hidden hover:shadow-lg transition-shadow md:w-80"
             >
               <p className="font-medium text-sm">Current Balance</p>
-              <p className="mt-10 text-xl text-gray-800 font-bold lg:text-2xl">
+              <p className="mt-6 text-lg text-gray-800 font-bold lg:text-xl">
                 ₦{max.toLocaleString("en-US")}
               </p>
               <span className="text-[10px] text-gray-700">
@@ -122,14 +124,16 @@ const Home = () => {
               className="p-6 bg-white rounded-lg shadow-md w-full overflow-hidden hover:shadow-lg transition-shadow md:w-80"
             >
               <p className="font-medium text-sm">Total Bookings</p>
-              <p className="mt-10 text-xl text-gray-800 font-bold lg:text-2xl">123+</p>
+              <p className="mt-6 text-lg text-gray-800 font-bold lg:text-xl">
+                123+
+              </p>
               <span className="text-[10px] text-gray-700">
                 +10.1% from last month
               </span>
             </div>
           </div>
 
-          <div className="my-10" data-aos="fade-up" data-aos-duration="1500">
+          <div className="my-20" data-aos="fade-up" data-aos-duration="1500">
             <WithdrawalTable
               withdrawals={withdrawals}
               copyToClipboard={copyToClipboard}
