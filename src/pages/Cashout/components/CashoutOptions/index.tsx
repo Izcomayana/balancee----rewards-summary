@@ -71,6 +71,9 @@ export default function CashoutOptions() {
                     it as a discount on future bookings.
                   </p>
                 </CardContent>
+                <div className="absolute top-0 right-0 p-2 bg-primary text-primary-foreground text-xs font-bold rounded-bl-lg">
+                  Fast
+                </div>
               </Card>
 
               <Card
@@ -87,6 +90,9 @@ export default function CashoutOptions() {
                     to future bookings for extra savings.
                   </p>
                 </CardContent>
+                <div className="absolute top-0 right-0 p-2 bg-secondary text-secondary-foreground text-xs font-bold rounded-bl-lg">
+                  More Value
+                </div>
               </Card>
             </div>
           ) : (
