@@ -1,6 +1,6 @@
 Balancee Rewards Summary Page
 
-Hi, I'm Israel and this is the cooking process of this yummy food
+Hi, I'm **Israel** and this is the cooking process of this yummy food :bowl_with_spoon:
 
 
 
@@ -34,8 +34,7 @@ This application is built using React with TypeScript, and employs various techn
 
 
 
-^
-[^##] Architecture and Structure
+## Architecture and Structure
 The application consists of three main pages:
 
 ###  1. Home Page
