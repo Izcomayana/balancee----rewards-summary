@@ -34,8 +34,8 @@ This application is built using React with TypeScript, and employs various techn
 
 
 
-
-## Architecture and Structure
+^
+[^##] Architecture and Structure
 The application consists of three main pages:
 
 ###  1. Home Page
@@ -61,12 +61,11 @@ The application consists of three main pages:
 **Overview**: Allows users to redeem their rewards through various options.
 
 **Cashout Options**:
+1. Direct Cashout: Users can choose between bank transfer or discounts on future bookings.
+     - Bank Transfer: Users fill out a form to withdraw funds, with a history of previous withdrawals displayed in a table.
+     - Discount on Future Bookings: Use earned cashback as a discount on upcoming bookings.
 
-- Direct Cashout: Users can choose between bank transfer or discounts on future bookings.
-- Bank Transfer: Users fill out a form to withdraw funds, with a history of previous withdrawals displayed in a table.
-- Discount on Future Bookings: Use earned cashback as a discount on upcoming bookings.
-
-Promo Codes: Convert cashback into promo codes for future bookings.
+2. Promo Codes: Convert cashback into promo codes for future bookings.
 
 
 
