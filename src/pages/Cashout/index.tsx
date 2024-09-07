@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CashoutOptions from "./components/CashoutOptions";
 import { Card } from "@/components/ui/card";
 import AOS from "aos";
@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import { getMaxValue, getStoredMaxValue } from "@/constants";
 
-const Cashout: React.FC = () => {
+const CashoutPage = () => {
   const [max, setMax] = useState<number>(0);
   const min = 50;
 
@@ -64,4 +64,4 @@ const Cashout: React.FC = () => {
   );
 };
 
-export default Cashout;
+export default CashoutPage;

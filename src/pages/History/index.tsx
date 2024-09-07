@@ -15,7 +15,7 @@ type Cashback = {
   earnings: boolean;
 };
 
-const History: React.FC = () => {
+const HistoryPage = () => {
   const [rewards, setRewards] = useState<Cashback[]>([]);
   const [sortOrder, setSortOrder] = useState<"newest" | "oldest" | "name">(
     "newest",
@@ -148,4 +148,4 @@ const History: React.FC = () => {
   );
 };
 
-export default History;
+export default HistoryPage;
