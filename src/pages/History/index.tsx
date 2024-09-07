@@ -94,7 +94,7 @@ const HistoryPage = () => {
       <main>
         <div className="container mx-auto px-4 py-4 pb-20 lg:PY-10 xl:px-0">
           <div className="flex justify-between items-center">
-            <h1 className="text-gray-800 text-xl montserrat font-bold md:text-2xl">
+            <h1 className="text-gray-800 text-lg montserrat font-bold md:text-2xl">
               Cashback History
             </h1>
           </div>

@@ -40,7 +40,7 @@ const Balance = () => {
         >
           <div className="p-6 bg-white rounded-lg shadow-md w-full overflow-hidden hover:shadow-lg transition-shadow md:w-[35rem]">
             <div className="flex justify-between items-center">
-              <p className="font-medium text-xl">Balance</p>
+              <p className="font-medium text-lg">Balance</p>
               <DialogTrigger asChild>
                 <p className="underline border-none cursor-pointer">
                   how to use
@@ -59,7 +59,7 @@ const Balance = () => {
 
         <DialogContent className="sm:max-w-lg">
           <DialogHeader>
-            <DialogTitle className="text-xl font-semibold md:text-2xl">
+            <DialogTitle className="text-lg font-semibold md:text-2xl">
               Cashout Methods:
             </DialogTitle>
           </DialogHeader>

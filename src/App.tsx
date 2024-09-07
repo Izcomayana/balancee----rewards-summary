@@ -5,7 +5,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Home from "@/pages"
+import Home from "@/pages";
 import HistoryPage from "@/pages/History";
 import Header from "./components/Header";
 import CashoutPage from "@/pages/Cashout";

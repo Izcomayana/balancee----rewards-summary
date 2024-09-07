@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import BankTransferForm from "../BankTransferForm.tsx/index.tsx";
-import FutureBookingForm from "../FutureBookingForm.tsx/index.tsx";
+import BankTransferForm from "../BankTransferForm";
+import FutureBookingForm from "../FutureBookingForm";
 
 const DirectCashout = () => {
   const [cashoutMethod, setCashoutMethod] = useState<string>("bank");

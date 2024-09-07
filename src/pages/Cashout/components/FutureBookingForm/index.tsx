@@ -13,6 +13,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { getMaxValue, updateMaxValue, getStoredMaxValue } from "@/constants";
+import { Link } from "react-router-dom";
 
 const FutureBookingForm = () => {
   const [bookingId, setBookingId] = useState<string>("");
@@ -71,6 +72,11 @@ const FutureBookingForm = () => {
           maxLength={5}
           required
         />
+        {bookingId.length > 0 && bookingId.length < 5 && (
+          <p className="text-sm text-red-500">
+            Booking ID must be exactly 5 digits
+          </p>
+        )}
       </div>
       <div className="space-y-2">
         <Label htmlFor="discount-amount">
@@ -82,6 +88,12 @@ const FutureBookingForm = () => {
           onChange={(e) => setDiscountAmount(e.target.value)}
           placeholder={`Enter amount to discount on your next booking (₦${min.toLocaleString()} - ₦${max.toLocaleString()})`}
         />
+        {discountAmount && (
+          <p className="text-sm text-muted-foreground">
+            You can only set discount amount between ₦{min.toLocaleString()} and
+            ₦ ₦${max.toLocaleString()}.
+          </p>
+        )}
       </div>
       <Button
         className="w-full"
@@ -108,9 +120,11 @@ const FutureBookingForm = () => {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogAction onClick={() => setShowDiscountAlert(false)}>
-              OK
-            </AlertDialogAction>
+            <Link to="/">
+              <AlertDialogAction onClick={() => setShowDiscountAlert(false)}>
+                OK
+              </AlertDialogAction>
+            </Link>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

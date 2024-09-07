@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import DirectCashout from "../DirectCashout";
-import PromoCode from "../Promocode.tsx";
+import PromoCode from "../Promocode";
 import { Toaster } from "sonner";
 import AOS from "aos";
 import "aos/dist/aos.css";

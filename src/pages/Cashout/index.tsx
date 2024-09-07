@@ -31,7 +31,7 @@ const CashoutPage = () => {
         <div className="container mx-auto px-4 py-4 pb-40 lg:pt-10 xl:px-0">
           <div className="flex justify-between items-center">
             <h1
-              className="text-gray-800 text-xl montserrat font-bold md:text-2xl"
+              className="text-gray-800 text-lg montserrat font-bold md:text-2xl"
               data-aos="fade-down"
             >
               Cash Out Your Rewards
@@ -45,7 +45,7 @@ const CashoutPage = () => {
               data-aos-duration="1000"
             >
               <div className="flex justify-between items-center">
-                <p className="font-medium text-xl">Available balance</p>
+                <p className="font-medium text-lg">Available balance</p>
               </div>
 
               <p className="mt-10 text-2xl text-gray-800 font-bold">

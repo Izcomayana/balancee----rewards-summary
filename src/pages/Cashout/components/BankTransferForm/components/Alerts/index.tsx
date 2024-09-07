@@ -8,6 +8,7 @@ import {
   AlertDialogFooter,
   AlertDialogAction,
 } from "@/components/ui/alert-dialog";
+import { Link } from "react-router-dom";
 
 interface BankAlertProps {
   showBankAlert: boolean;
@@ -28,9 +29,11 @@ const BankAlert: React.FC<BankAlertProps> = ({
         </AlertDialogDescription>
       </AlertDialogHeader>
       <AlertDialogFooter>
-        <AlertDialogAction onClick={() => setShowBankAlert(false)}>
-          OK
-        </AlertDialogAction>
+        <Link to="/">
+          <AlertDialogAction onClick={() => setShowBankAlert(false)}>
+            OK
+          </AlertDialogAction>
+        </Link>
       </AlertDialogFooter>
     </AlertDialogContent>
   </AlertDialog>

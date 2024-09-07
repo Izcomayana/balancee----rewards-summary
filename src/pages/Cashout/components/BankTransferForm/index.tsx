@@ -154,7 +154,12 @@ const BankTransferForm = () => {
         onChange={(e) => setAccountNumber(e.target.value.slice(0, 10))}
         placeholder="Enter your account number"
         maxLength={10}
-      />
+      />{" "}
+      {accountNumber.length > 0 && accountNumber.length < 10 && (
+        <p className="text-sm text-red-500">
+          Account number must be exactly 10 digits
+        </p>
+      )}
       <FormField
         id="amount"
         label={`Withdraw Amount (₦${min.toLocaleString()} - ₦${max.toLocaleString()})`}
@@ -163,6 +168,12 @@ const BankTransferForm = () => {
         onChange={(e) => setCashoutAmount(e.target.value)}
         placeholder={`Enter amount to withdraw (₦${min.toLocaleString()} - ₦${max.toLocaleString()})`}
       />
+      {cashoutAmount && (
+        <p className="text-sm text-muted-foreground">
+          You can only cash out between ₦{min.toLocaleString()} and ₦ ₦
+          {max.toLocaleString()}.
+        </p>
+      )}
       <Button
         className="w-full"
         onClick={handleSubmit}
@@ -176,17 +187,14 @@ const BankTransferForm = () => {
           "Withdraw"
         )}
       </Button>
-
       {max < min && (
         <p className="text-red-500">You cannot withdraw. Max limit reached.</p>
       )}
-
       <WithdrawalTable
         withdrawals={withdrawals}
         copyToClipboard={copyToClipboard}
         onViewDetails={handleViewDetails}
       />
-
       <BankAlert
         showBankAlert={showBankAlert}
         setShowBankAlert={setShowBankAlert}
