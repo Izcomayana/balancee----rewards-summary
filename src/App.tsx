@@ -5,10 +5,10 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Home from "@/pages/Home";
-import History from "./pages/History";
+import Home from "@/pages"
+import History from "./pages/history";
 import Header from "./components/Header";
-import Cashout from "./pages/Cashout";
+import Cashout from "./pages/cashout";
 
 function AnimatedRoutes() {
   const location = useLocation();
